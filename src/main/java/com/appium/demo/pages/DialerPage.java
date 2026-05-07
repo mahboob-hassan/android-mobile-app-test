@@ -46,6 +46,9 @@ public class DialerPage extends BasePage {
 
     @AndroidFindBy(id = "com.google.android.dialer:id/dialpad_voice_call_button")
     private WebElement callButton;
+    
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.Button\").instance(4)")
+    private WebElement endButton;
 
     // FIX: Add action methods so the page object can actually be used in tests
     public void tapDigit1() { dialPad1.click(); }
@@ -58,4 +61,5 @@ public class DialerPage extends BasePage {
     public void tapDigit8() { dialPad8.click(); }
     public void tapDigit9() { dialPad9.click(); }
     public void tapCallButton() { callButton.click(); }
+    public void tapEndButton() { endButton.click(); }
 }

@@ -5,24 +5,29 @@ import java.net.URI;
 import java.net.URL;
 import java.time.Duration;
 
+import com.appium.demo.constants.Constants;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class DriverFactory {
 
-    static AppiumDriver driver;
-
-    public static AppiumDriver initializeDriver() throws MalformedURLException {
+    private AppiumDriver driver;
+    
+    public DriverFactory() {
+    }
+    
+    public AppiumDriver initializeDriver() throws MalformedURLException {
     	
-        URL appiumServerUrl = URI.create("http://127.0.0.1:4723").toURL();
+        URL appiumServerUrl = URI.create(Constants.APPIUM_SERVER_URL).toURL();
        
     	UiAutomator2Options options = new UiAutomator2Options()
-                .setDeviceName("emulator-5554")
-                .setPlatformName("Android")
-                .setAutomationName("UiAutomator2")
-                .setAppPackage("com.android.settings")
-                .setAppActivity(".Settings")
+                .setDeviceName(Constants.DEVICE_NAME)
+                .setPlatformName(Constants.PLATEFORM_NAME)
+                .setAutomationName(Constants.AUTOMATION_NAME)
+                .setAppPackage(Constants.APP_PACKAGE)
+                .setAppActivity(Constants.APP_ACTIVITY)
                 .setNoReset(true);
 
         // FIX 1: Initialize driver BEFORE using it
