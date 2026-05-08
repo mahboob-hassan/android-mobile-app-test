@@ -44,6 +44,10 @@ public class DialerTest {
 
         dialerPage.tapCallButton();
         dialerPage.tapEndButton();
+        
+        System.out.println("test succesfully completed....");
+        
+        
     }
 
     @AfterMethod

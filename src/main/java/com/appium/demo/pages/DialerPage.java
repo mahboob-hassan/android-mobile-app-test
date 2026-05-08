@@ -51,7 +51,10 @@ public class DialerPage extends BasePage {
     private WebElement endButton;
 
     // FIX: Add action methods so the page object can actually be used in tests
-    public void tapDigit1() { dialPad1.click(); }
+    public void tapDigit1() { 
+    	
+    	dialPad1.click(); 
+    	}
     public void tapDigit2() { dialPad2.click(); }
     public void tapDigit3() { dialPad3.click(); }
     public void tapDigit4() { dialPad4.click(); }
